@@ -4,3 +4,10 @@ spring:
       host: localhost
       port: 27017
       database: shipping
+
+  jackson:
+    default-property-inclusion: NON_NULL
+
+  output:
+    ansi:
+      enabled: ALWAYS
