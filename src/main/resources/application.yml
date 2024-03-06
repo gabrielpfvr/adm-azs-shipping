@@ -1,8 +1,8 @@
 spring:
   data:
     mongodb:
-      host: localhost
-      #host: mongodb
+      #host: localhost
+      host: mongodb
       # use mongodb as host when running on docker-compose
       port: 27017
       database: shipping
