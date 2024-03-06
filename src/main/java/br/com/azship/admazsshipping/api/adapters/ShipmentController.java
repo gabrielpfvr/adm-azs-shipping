@@ -36,6 +36,7 @@ public class ShipmentController {
     }
 
     @DeleteMapping("{id}/delete")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteShipment(@PathVariable String id) {
         this.service.deleteShipment(id);
     }

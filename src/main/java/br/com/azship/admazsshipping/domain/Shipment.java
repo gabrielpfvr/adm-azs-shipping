@@ -3,12 +3,18 @@ package br.com.azship.admazsshipping.domain;
 import br.com.azship.admazsshipping.api.dto.ShipmentRequest;
 import br.com.azship.admazsshipping.domain.enums.Status;
 import br.com.azship.admazsshipping.infrastructure.adapters.entity.ShipmentEntity;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.BeanUtils;
 
 import java.time.LocalDateTime;
 
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Shipment {
 
     private String id;
