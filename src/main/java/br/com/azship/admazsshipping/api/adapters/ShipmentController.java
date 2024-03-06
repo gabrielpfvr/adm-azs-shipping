@@ -1,6 +1,7 @@
 package br.com.azship.admazsshipping.api.adapters;
 
 import br.com.azship.admazsshipping.api.dto.PageRequest;
+import br.com.azship.admazsshipping.api.dto.ShipmentFilters;
 import br.com.azship.admazsshipping.api.dto.ShipmentRequest;
 import br.com.azship.admazsshipping.api.dto.ShipmentResponse;
 import br.com.azship.admazsshipping.domain.ports.ShipmentServicePort;
@@ -25,8 +26,8 @@ public class ShipmentController {
     }
 
     @GetMapping
-    public Page<ShipmentResponse> getAll(PageRequest pageable) {
-        return this.service.findAll(pageable);
+    public Page<ShipmentResponse> getAll(ShipmentFilters filters, PageRequest pageable) {
+        return this.service.findAll(filters, pageable);
     }
 
     @PutMapping("{id}/update")

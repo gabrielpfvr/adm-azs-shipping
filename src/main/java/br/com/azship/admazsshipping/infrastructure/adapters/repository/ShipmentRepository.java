@@ -5,6 +5,7 @@ import br.com.azship.admazsshipping.domain.Shipment;
 import br.com.azship.admazsshipping.domain.ports.ShipmentRepositoryPort;
 import br.com.azship.admazsshipping.infrastructure.adapters.entity.ShipmentEntity;
 import br.com.azship.admazsshipping.infrastructure.exception.NotFoundException;
+import com.querydsl.core.types.Predicate;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Repository;
@@ -29,8 +30,8 @@ public class ShipmentRepository implements ShipmentRepositoryPort {
     }
 
     @Override
-    public Page<Shipment> findAll(PageRequest pageRequest) {
-        return this.mongoRepository.findAll(pageRequest).map(Shipment::from);
+    public Page<Shipment> findAll(Predicate predicate, PageRequest pageRequest) {
+        return this.mongoRepository.findAll(predicate, pageRequest).map(Shipment::from);
     }
 
     @Override

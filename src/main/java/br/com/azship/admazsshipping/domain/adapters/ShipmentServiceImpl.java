@@ -1,6 +1,7 @@
 package br.com.azship.admazsshipping.domain.adapters;
 
 import br.com.azship.admazsshipping.api.dto.PageRequest;
+import br.com.azship.admazsshipping.api.dto.ShipmentFilters;
 import br.com.azship.admazsshipping.api.dto.ShipmentRequest;
 import br.com.azship.admazsshipping.api.dto.ShipmentResponse;
 import br.com.azship.admazsshipping.domain.Shipment;
@@ -32,8 +33,9 @@ public class ShipmentServiceImpl implements ShipmentServicePort {
     }
 
     @Override
-    public Page<ShipmentResponse> findAll(PageRequest pageRequest) {
-        return this.repository.findAll(pageRequest).map(ShipmentResponse::from);
+    public Page<ShipmentResponse> findAll(ShipmentFilters filters, PageRequest pageRequest) {
+        return this.repository.findAll(filters.shipmentPredicate().build(), pageRequest)
+            .map(ShipmentResponse::from);
     }
 
     @Override
