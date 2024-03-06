@@ -20,7 +20,7 @@ public class ShipmentRepository implements ShipmentRepositoryPort {
 
     @Override
     public void save(ShipmentEntity shipmentEntity) {
-        this.mongoRepository.insert(shipmentEntity);
+        this.mongoRepository.save(shipmentEntity);
     }
 
     @Override
