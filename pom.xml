@@ -10,7 +10,7 @@
 
 	<groupId>br.com.azship</groupId>
 	<artifactId>adm-azs-shipping</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<name>adm-azs-shipping</name>
 	<description>Shipping REST API</description>
 	<properties>
