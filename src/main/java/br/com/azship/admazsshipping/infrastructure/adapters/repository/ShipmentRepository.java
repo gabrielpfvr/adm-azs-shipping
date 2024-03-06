@@ -46,6 +46,6 @@ public class ShipmentRepository implements ShipmentRepositoryPort {
             throw new NotFoundException(NOT_FOUND_MESSAGE);
         }
         shipment.setId(id);
-        this.save(ShipmentEntity.from(shipment));
+        this.mongoRepository.save(ShipmentEntity.from(shipment));
     }
 }

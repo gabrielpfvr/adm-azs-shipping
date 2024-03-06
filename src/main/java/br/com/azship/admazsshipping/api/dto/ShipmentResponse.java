@@ -58,7 +58,7 @@ public class ShipmentResponse {
     private void setCubage(Double cubage) {
         if (cubage != null) {
             var df = new DecimalFormat("#.##");
-            this.cubage = df.format(cubage) + "kg/m³";
+            this.cubage = df.format(cubage) + "kg";
         }
     }
 }

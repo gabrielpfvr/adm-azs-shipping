@@ -82,7 +82,7 @@ class ShipmentRepositoryTest {
 
         repository.update("1", shipment());
 
-        verify(mongoDbRepository).insert(shipmentEntity());
+        verify(mongoDbRepository).save(shipmentEntity());
     }
 
     @Test
@@ -92,6 +92,6 @@ class ShipmentRepositoryTest {
             .isThrownBy(() -> repository.update("1", shipment))
             .withMessage("Shipment not found!");
 
-        verify(mongoDbRepository, never()).insert(any(ShipmentEntity.class));
+        verify(mongoDbRepository, never()).save(any(ShipmentEntity.class));
     }
 }
