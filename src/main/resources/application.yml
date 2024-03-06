@@ -2,6 +2,8 @@ spring:
   data:
     mongodb:
       host: localhost
+      #host: mongodb
+      # use mongodb as host when running on docker-compose
       port: 27017
       database: shipping
 
@@ -11,3 +13,14 @@ spring:
   output:
     ansi:
       enabled: ALWAYS
+
+management:
+  server:
+    port: 8081
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health, loggers, metrics
