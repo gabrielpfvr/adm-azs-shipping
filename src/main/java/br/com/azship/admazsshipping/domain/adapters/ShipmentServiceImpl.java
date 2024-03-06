@@ -8,11 +8,13 @@ import br.com.azship.admazsshipping.domain.Shipment;
 import br.com.azship.admazsshipping.domain.ports.ShipmentRepositoryPort;
 import br.com.azship.admazsshipping.domain.ports.ShipmentServicePort;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 
 import java.time.Instant;
 import java.util.Base64;
 
+@Slf4j
 @RequiredArgsConstructor
 public class ShipmentServiceImpl implements ShipmentServicePort {
 
@@ -26,6 +28,7 @@ public class ShipmentServiceImpl implements ShipmentServicePort {
     }
 
     private void generateTrackingNumber(Shipment shipment) {
+        log.info("Generating tracking number...");
         var epochTime = Instant.now().toEpochMilli();
         var epochEncoded = Base64.getEncoder().encodeToString(String.valueOf(epochTime).getBytes());
         var trackingNumber = epochEncoded.substring(0, 8);
@@ -46,6 +49,7 @@ public class ShipmentServiceImpl implements ShipmentServicePort {
     @Override
     public void deleteShipment(String id) {
         var shipment = this.repository.findById(id);
+        log.info("Performing shipment soft delete...");
         shipment.softDelete();
         this.repository.save(shipment);
     }
