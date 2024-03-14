@@ -8,10 +8,10 @@
 		<version>3.2.3</version>
 	</parent>
 
-	<groupId>br.com.azship</groupId>
-	<artifactId>adm-azs-shipping</artifactId>
+	<groupId>br.com.gabrielmonteiromotta</groupId>
+	<artifactId>shipping-rest-api</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
-	<name>adm-azs-shipping</name>
+	<name>shipping-rest-api</name>
 	<description>Shipping REST API</description>
 	<properties>
 		<java.version>21</java.version>
